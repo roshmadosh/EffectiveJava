@@ -3,13 +3,13 @@
  */
 package com.hiroshisprojects.effectivejava;
 
-import com.hiroshisprojects.effectivejava.collections.Collections;
+import com.hiroshisprojects.effectivejava.ch2.static_factory_methods.washeddishes.WashedDishes;
 
 public class App {
 
     public static void main(String[] args) {
-        Collections.main(new String[]{ "foo" });
-		System.out.println("----------------");
-        Collections.main(new String[]{ "bar" });
+
+			// Type of returned object from static factory method (i.e. DishWasher) is hidden from consumer.
+			WashedDishes.getInstance().printDrawback();    
     }
 }
