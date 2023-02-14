@@ -1,11 +1,10 @@
 package effectivejava.ch2.builder;
 
-import java.util.Set;
 
 /**
  *	An example of a class with many parameters of the same type, and that would benefit from using the builder pattern.
  */
-public abstract class Athlete {
+public class Athlete {
 	private final double height; // required
 	private final double bodyWeight;  // required
 	private final double bench;  // rest are optional
@@ -53,6 +52,12 @@ public abstract class Athlete {
 		this.bench = builder.bench;
 		this.squat = builder.squat;
 		this.deadlift = builder.deadlift;
+	}
+
+	@Override
+	public String toString() {
+		return "Athlete [height=" + height + ", bodyWeight=" + bodyWeight + ", bench=" + bench + ", squat=" + squat
+				+ ", deadlift=" + deadlift + "]";
 	}
 
 }

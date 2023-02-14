@@ -1,4 +1,4 @@
-package com.hiroshisprojects.effectivejava.ch2.static_factory_methods.washeddishes;
+package effectivejava.ch2.static_factory_methods.washeddishes;
 
 
 /**

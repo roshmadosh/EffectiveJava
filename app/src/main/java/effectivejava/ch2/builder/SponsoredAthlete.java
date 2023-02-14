@@ -31,4 +31,15 @@ public abstract class SponsoredAthlete {
 	SponsoredAthlete(Builder<?> builder) {
 		sponsors = builder.sponsors.clone();
 	}
+
+
+	// below methods are for printing objects to stdout, and not a required part of the builder pattern implementation.
+	@Override
+	public String toString() {
+		return "SponsoredAthlete [sponsors=" + sponsors + "]";
+	}
+
+	public Set<Sponsor> getSponsors() {
+		return sponsors;
+	}
 }

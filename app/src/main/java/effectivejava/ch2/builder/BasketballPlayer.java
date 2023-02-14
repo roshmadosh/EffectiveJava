@@ -1,7 +1,7 @@
 package effectivejava.ch2.builder;
 
 public class BasketballPlayer extends SponsoredAthlete {
-  
+ 
 	private final int wingspan;
 	private final double standingVertical;
 
@@ -35,6 +35,11 @@ public class BasketballPlayer extends SponsoredAthlete {
 		super(builder);
 		this.wingspan = builder.wingspan;
 		this.standingVertical = builder.standingVertical;
+	}
+
+	@Override
+	public String toString() {
+		return "BasketballPlayer [ sponsors=" + getSponsors() + ", wingspan=" + wingspan + ", standingVertical=" + standingVertical + "]";
 	}
 
 

@@ -26,7 +26,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("com.hiroshisprojects.effectivejava.App")
+    mainClass.set("effectivejava.App")
 }
 
 tasks.named<Test>("test") {

@@ -23,10 +23,14 @@ public class App {
 				.deadlift(105.1)
 				.build();
 
+			System.out.println(athlete);
+
 			// Instantiating an object using the builder pattern, and that inherited builder methods.	
 			SponsoredAthlete lebron = new BasketballPlayer.Builder(84)
 				.addSponsor(Sponsor.NIKE) // inherited method, observe how it returns a BasketballPlayer.Builder instance and no typecasting is required
 				.standingVertical(45) 
 				.build();
+
+			System.out.println(lebron);
     }
 }
