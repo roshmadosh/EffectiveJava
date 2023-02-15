@@ -13,7 +13,7 @@ public class App {
 
     public static void main(String[] args) {
 
-			// Type of returned object from static factory method (i.e. DishWasher) is hidden from consumer.
+			//	Type of returned object from static factory method (i.e. DishWasher) is hidden from consumer.
 			WashedDishes.getInstance().printDrawback();    
 
 			// Instantiating an Athlete object using the builder pattern
@@ -32,5 +32,7 @@ public class App {
 				.build();
 
 			System.out.println(lebron);
+
+			
     }
 }
