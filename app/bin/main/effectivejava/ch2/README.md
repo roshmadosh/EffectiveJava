@@ -4,6 +4,7 @@
 ## Table of Contents
 1. [Static Factory Methods](#static-factory-methods)
 2. [Builder Pattern](#builder-pattern)
+3. [Singleton](#singleton)
 ### Static Factory Methods
 
 **Example 1: Washed Dishes**  
@@ -31,6 +32,15 @@ See `static_factory_methods` package for code.
 1. You create an additiona Builder object to create an object. Can be problematic for performance-critical use-cases.
 2. More verbose than a constructor for the consumers of the API.
 
+### Singleton  
 
+**TYPES**  
+1. Field
+2. Static factory
+3. Enum
+
+Static factory provides more flexibility if we decide to change the class to a non-singleton compared to the field implementation.  
+
+Enum is considered the most preferred because serializing/deserializing won't require the recreation of the singleton (because, I think, enums are not stored on heap and are treated like literals) or defining a readResolve method, which is required for the static factory enum implementation. See tests.    
 
 
