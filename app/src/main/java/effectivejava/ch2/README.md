@@ -5,6 +5,7 @@
 1. [Static Factory Methods](#static-factory-methods)
 2. [Builder Pattern](#builder-pattern)
 3. [Singleton](#singleton)
+4. [Why try-with-resources is preferred over try-with-finally](#try-with-resources)
 ### Static Factory Methods
 
 **Example 1: Washed Dishes**  
@@ -43,4 +44,7 @@ Static factory provides more flexibility if we decide to change the class to a n
 
 Enum is considered the most preferred because serializing/deserializing won't require the recreation of the singleton (because, I think, enums are not stored on heap and are treated like literals) or defining a readResolve method, which is required for the static factory enum implementation. See tests.    
 
+### try-with-resources  
+1. Nested `finally` blocks are required if multiple closeables have to be closed.
+2. try-with-resources shows exceptions that were thrown within the `try` block and supressed any that are thrown outside it. The surpressed exceptions can still be obtained by calling `getSupressed()` from a `Throwable`.  
 
