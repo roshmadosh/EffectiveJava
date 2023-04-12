@@ -3,16 +3,36 @@
  */
 package effectivejava;
 
+import java.util.HashSet;
+import java.util.List;
+
 import effectivejava.ch2.builder.Athlete;
 import effectivejava.ch2.builder.BasketballPlayer;
 import effectivejava.ch2.builder.SponsoredAthlete;
 import effectivejava.ch2.builder.SponsoredAthlete.Sponsor;
 import effectivejava.ch2.static_factory_methods.washeddishes.WashedDishes;
+import effectivejava.ch4.inheritance.BadCountedHashSet;
+import effectivejava.ch4.inheritance.CountedSet;
 
 public class App {
 
     public static void main(String[] args) {
+			inheritance();
+			
+    }
 
+		static void inheritance() {
+			BadCountedHashSet<String> badNames = new BadCountedHashSet<>();
+			CountedSet<String> names = new CountedSet<>(new HashSet<>());
+
+			badNames.addAll(List.of("Gerald", "Betty", "Marcy"));
+			names.addAll(List.of("Gerald", "Betty", "Marcy"));
+			System.out.println("badNames count: " + badNames.getAddCount()); // prints 6.
+			System.out.println("names count: " + names.getAddCount()); // prints 3.
+
+		}
+
+		static void builder() {
 			//	Type of returned object from static factory method (i.e. DishWasher) is hidden from consumer.
 			WashedDishes.getInstance().printDrawback();    
 
@@ -32,7 +52,5 @@ public class App {
 				.build();
 
 			System.out.println(lebron);
-
-			
-    }
+		}
 }
