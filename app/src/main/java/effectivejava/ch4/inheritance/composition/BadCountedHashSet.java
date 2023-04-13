@@ -1,4 +1,4 @@
-package effectivejava.ch4.inheritance;
+package effectivejava.ch4.inheritance.composition;
 
 import java.util.Collection;
 import java.util.HashSet;

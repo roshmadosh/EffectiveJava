@@ -11,15 +11,21 @@ import effectivejava.ch2.builder.BasketballPlayer;
 import effectivejava.ch2.builder.SponsoredAthlete;
 import effectivejava.ch2.builder.SponsoredAthlete.Sponsor;
 import effectivejava.ch2.static_factory_methods.washeddishes.WashedDishes;
-import effectivejava.ch4.inheritance.BadCountedHashSet;
-import effectivejava.ch4.inheritance.CountedSet;
+import effectivejava.ch4.inheritance.composition.BadCountedHashSet;
+import effectivejava.ch4.inheritance.composition.CountedSet;
+import effectivejava.ch4.inheritance.prohibit.Prohibited;
 
 public class App {
 
     public static void main(String[] args) {
-			inheritance();
+			prohibited();
 			
     }
+
+		static void prohibited() {
+			Prohibited prohibited = Prohibited.create();
+			prohibited.printName();
+		}
 
 		static void inheritance() {
 			BadCountedHashSet<String> badNames = new BadCountedHashSet<>();
