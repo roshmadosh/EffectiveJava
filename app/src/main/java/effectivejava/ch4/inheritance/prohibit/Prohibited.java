@@ -5,11 +5,19 @@ package effectivejava.ch4.inheritance.prohibit;
  */
 public class Prohibited {
 	private final String name;
+
+	// private constructor
 	private Prohibited() {
 		name = "Blake and Drake";
 	}
 
-	// We can still use subclasses internally
+	public void printName() {
+		System.out.println("My name is " + name);
+	}
+
+	// We can still use subclasses internally. Notice that we could have just made the change directly instead of a method override, 
+	// but that would require deleting the line `System.out.println("My name is " + name)` and replacing it when we may want to keep
+	// the replaced implementation just in case.
 	private class SubProhibited extends Prohibited {
 
 		@Override
@@ -19,11 +27,8 @@ public class Prohibited {
 	
 	}
 
-	public void printName() {
-		System.out.println("My name is " + name);
-	}
 
-	// Using a static factory method so that we can still leverage inheritance internally while prohibiting it externally.
+	// Using a static factory method so that we have the freedom to modify the instantiation logic without causing breaking changes.
 	public static Prohibited create() {
 		Prohibited prohibited = new Prohibited();
 
