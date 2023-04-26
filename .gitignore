@@ -9,4 +9,4 @@ build
 .settings/
 .vim/
 
-**/*/bin/
+app/bin/
